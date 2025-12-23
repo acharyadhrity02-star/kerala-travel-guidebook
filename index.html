@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Explorer's Guidebook - Jan 14-24, 2025</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        @media print {
+            body { margin: 0; }
+            .page-break { page-break-before: always; }
+            .no-print { display: none; }
+            a { color: #0066cc; text-decoration: underline; }
+        }
+        
+        .cover-page {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200') center/cover;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .cover-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cover-page h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .cover-page .subtitle {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .cover-page .dates {
+            font-size: 1.4em;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .cover-icons {
+            font-size: 3em;
+            margin: 30px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section {
+            margin-bottom: 60px;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #764ba2;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            font-size: 1.8em;
+            color: #764ba2;
+            margin: 25px 0 15px;
+        }
+        
+        .day-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            page-break-inside: avoid;
+        }
+        
+        .day-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .day-header h3 {
+            color: white;
+            margin: 0;
+            font-size: 2em;
+        }
+        
+        .day-theme {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .timeline {
+            margin: 20px 0;
+        }
+        
+        .time-block {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .time-block h4 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .time-block ul {
+            margin-left: 20px;
+        }
+        
+        .time-block li {
+            margin: 8px 0;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .info-card h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .pin-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .pin-list a {
+            display: block;
+            padding: 10px 15px;
+            margin: 5px 0;
+            background: white;
+            border-radius: 8px;
+            color: #0066cc;
+            text-decoration: none;
+            transition: all 0.3s;
+            border-left: 4px solid #667eea;
+        }
+        
+        .pin-list a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .checklist {
+            list-style: none;
+        }
+        
+        .checklist li {
+            padding: 10px;
+            margin: 5px 0;
+            background: white;
+            border-radius: 8px;
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .checklist li::before {
+            content: '☐';
+            position: absolute;
+            left: 15px;
+            font-size: 1.3em;
+            color: #667eea;
+        }
+        
+        .photo-tip {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .budget-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .budget-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .budget-table tr:hover {
+            background: #f5f7fa;
+        }
+        
+        .tip-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .warning-box {
+            background: #f8d7da;
+            border-left: 5px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .image-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .image-caption {
+            padding: 15px;
+            background: white;
+            font-weight: 600;
+            color: #764ba2;
+        }
+        
+        .print-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            z-index: 1000;
+        }
+        
+        .print-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        
+        .master-map {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+        
+        .emergency-contacts {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            padding: 30px;
+            border-radius: 20px;
+            color: #333;
+        }
+        
+        .top-experiences {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .experience-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .experience-card .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- COVER PAGE -->
+    <div class="cover-page">
+        <div class="cover-content">
+            <div class="cover-icons">🌴 🌊 🛶 🛕 🌅</div>
+            <h1>KERALA EXPLORER'S GUIDEBOOK</h1>
+            <p class="subtitle">A 11-Day Journey Through God's Own Country</p>
+            <p class="dates">📅 January 14–24, 2025</p>
+            <p style="margin-top: 30px; font-size: 1.2em;">Your Complete Travel Companion</p>
+            <p style="font-size: 1.1em; opacity: 0.9;">Kanyakumari → Trivandrum → Alleppey → Kochi</p>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- MASTER PIN LIST -->
+    <div class="container">
+        <div class="section master-map">
+            <h2 style="color: white;">📍 MASTER PIN LIST - COMPLETE TRIP</h2>
+            <p style="color: white; font-size: 1.1em; margin-bottom: 20px;">Save all these locations to your Google Maps for offline access!</p>
+            
+            <div class="pin-list">
+                <a href="https://www.google.com/maps/search/?api=1&query=Kanyakumari+Railway+Station" target="_blank">📍 Kanyakumari Railway Station</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Central+Government+Holiday+Home+Kanyakumari" target="_blank">🏨 Central Government Holiday Home Kanyakumari</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Vivekananda+Rock+Memorial+Kanyakumari" target="_blank">🛕 Vivekananda Rock Memorial</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Thiruvalluvar+Statue+Kanyakumari" target="_blank">🗿 Thiruvalluvar Statue</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Kanyakumari+Beach+Sunset+Point" target="_blank">🌅 Kanyakumari Beach Sunset Point</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Padmanabhapuram+Palace" target="_blank">🏰 Padmanabhapuram Palace</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Suchindram+Thanumalayan+Temple" target="_blank">🛕 Suchindram Temple</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Mathur+Hanging+Bridge+Kanyakumari" target="_blank">🌉 Mathur Hanging Bridge</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Poovar+Island+Kerala" target="_blank">🏝️ Poovar Island</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Poovar+Beach+Kerala" target="_blank">🏖️ Poovar Beach</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Central+Government+Holiday+Home+Thiruvananthapuram" target="_blank">🏨 Central Government Holiday Home Trivandrum</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Padmanabhaswamy+Temple+Trivandrum" target="_blank">🛕 Padmanabhaswamy Temple</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Napier+Museum+Trivandrum" target="_blank">🏛️ Napier Museum</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Kuthiramalika+Palace+Museum" target="_blank">🏰 Kuthiramalika Palace</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Shanghumukham+Beach+Trivandrum" target="_blank">🏖️ Shanghumukham Beach</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Varkala+Beach+Kerala" target="_blank">🏖️ Varkala Beach</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Janardhana+Swamy+Temple+Varkala" target="_blank">🛕 Janardhana Swamy Temple Varkala</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Alleppey+Beach" target="_blank">🏖️ Alleppey Beach</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Alleppey+Backwaters" target="_blank">🛶 Alleppey Backwaters</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Marari+Beach+Kerala" target="_blank">🏖️ Marari Beach</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Central+Government+Holiday+Home+Kochi" target="_blank">🏨 Central Government Holiday Home Kochi</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Fort+Kochi" target="_blank">🏰 Fort Kochi</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Chinese+Fishing+Nets+Fort+Kochi" target="_blank">🎣 Chinese Fishing Nets</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Mattancherry+Palace+Kochi" target="_blank">🏛️ Mattancherry Palace</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Paradesi+Synagogue+Kochi" target="_blank">🕍 Jewish Synagogue Kochi</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Athirappilly+Waterfalls" target="_blank">💦 Athirappilly Waterfalls</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Marine+Drive+Kochi" target="_blank">🌊 Marine Drive Kochi</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Lulu+Mall+Kochi" target="_blank">🛍️ Lulu Mall Kochi</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Santa+Cruz+Basilica+Fort+Kochi" target="_blank">⛪ Santa Cruz Basilica</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Kochi+Biennale+Foundation" target="_blank">🎨 Kochi Biennale Art Gallery</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- DAY BY DAY ITINERARY -->
+    <div class="container">
+        <h2>📅 DAY-BY-DAY ITINERARY</h2>
+
+        <!-- DAY 1 -->
+        <div class="day-card">
+            <div class="day-header">
+                <h3>DAY 1 - JANUARY 14 (TUESDAY) 🌅</h3>
+                <p class="day-theme">Land's End - Where Three Seas Meet</p>
+            </div>
+
+            <div class="image-gallery">
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600" alt="Vivekananda Rock Memorial">
+                    <div class="image-caption">🛕 Vivekananda Rock Memorial</div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=600" alt="Kanyakumari Sunset">
+                    <div class="image-caption">🌅 Kanyakumari Sunset</div>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="time-block">
+                    <h4>⏰ MORNING (Arrival)</h4>
+                    <ul>
+                        <li><strong>07:00–09:00</strong> Arrive Kanyakumari Railway Station</li>
+                        <li><strong>09:00–09:30</strong> Transfer to Central Govt Holiday Home (2 km, 10 min)</li>
+                        <li><strong>09:30–10:30</strong> Check-in, freshen up, breakfast</li>
+                        <li><strong>10:30–12:00</strong> Rest & relax</li>
+                    </ul>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌞 AFTERNOON</h4>
+                    <ul>
+                        <li><strong>12:00–13:00</strong> Lunch at hotel/nearby (try fish curry meals)</li>
+                        <li><strong>13:00–14:00</strong> Rest</li>
+                        <li><strong>14:00–16:30</strong> 🛕 <strong>Vivekananda Rock Memorial + Thiruvalluvar Statue</strong> ferry trip (book tickets early, ₹50/person)</li>
+                    </ul>
+                    <div class="photo-tip">📸 Photo ops: Rock memorial architecture, ocean panorama, statue close-up</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌆 EVENING</h4>
+                    <ul>
+                        <li><strong>16:30–18:30</strong> 🌅 <strong>Sunset at Kanyakumari Beach</strong> (tri-sea confluence point)</li>
+                        <li><strong>18:30–19:00</strong> Walk along beach promenade</li>
+                        <li><strong>19:00–20:30</strong> Dinner at Sea View Restaurant (seafood specialties)</li>
+                        <li><strong>20:30</strong> Return to hotel, rest</li>
+                    </ul>
+                    <div class="photo-tip">📸 Sunset over Indian Ocean, colorful sky, silhouette shots</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📍 Day 1 Pin List:</h4>
+                <div class="pin-list">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Kanyakumari+Railway+Station" target="_blank">Kanyakumari Railway Station</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Central+Government+Holiday+Home+Kanyakumari" target="_blank">Central Government Holiday Home Kanyakumari</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Vivekananda+Rock+Memorial+Kanyakumari" target="_blank">Vivekananda Rock Memorial</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Thiruvalluvar+Statue+Kanyakumari" target="_blank">Thiruvalluvar Statue</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Kanyakumari+Beach+Sunset+Point" target="_blank">Kanyakumari Beach Sunset Point</a>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🍽️ Local Food</h4>
+                    <p>Fish curry rice, banana chips, filter coffee</p>
+                </div>
+                <div class="info-card">
+                    <h4>🛍️ Shopping</h4>
+                    <p>Seashell crafts, palm-leaf products at beach stalls</p>
+                </div>
+                <div class="info-card">
+                    <h4>💰 Budget Tip</h4>
+                    <p>Ferry tickets sell out fast; buy early morning</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>✅ Do:</strong> Carry water bottle, wear comfortable walking shoes
+            </div>
+            <div class="warning-box">
+                <strong>❌ Don't:</strong> Miss the sunset (best around 18:00)
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- DAY 2 -->
+        <div class="day-card">
+            <div class="day-header">
+                <h3>DAY 2 - JANUARY 15 (WEDNESDAY) 🏰</h3>
+                <p class="day-theme">Heritage & Hinterland</p>
+            </div>
+
+            <div class="image-gallery">
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600" alt="Padmanabhapuram Palace">
+                    <div class="image-caption">🏰 Padmanabhapuram Palace</div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600" alt="Temple Architecture">
+                    <div class="image-caption">🛕 Suchindram Temple</div>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="time-block">
+                    <h4>⏰ MORNING</h4>
+                    <ul>
+                        <li><strong>06:00–07:00</strong> Optional sunrise viewing at beach</li>
+                        <li><strong>07:00–08:30</strong> Breakfast at hotel</li>
+                        <li><strong>08:30–09:00</strong> Depart for day tour by car</li>
+                        <li><strong>09:00–11:00</strong> 🏰 <strong>Padmanabhapuram Palace</strong> (45 km, 1 hr drive)</li>
+                    </ul>
+                    <div class="photo-tip">📸 Wooden architecture, intricate carvings, courtyard, antique furniture - Entry: ₹35, guide recommended</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌞 AFTERNOON</h4>
+                    <ul>
+                        <li><strong>11:00–12:00</strong> Drive to <strong>Suchindram Temple</strong> (20 km, 30 min)</li>
+                        <li><strong>12:00–13:00</strong> 🛕 Temple visit (musical pillars, 18-ft Hanuman statue)</li>
+                        <li><strong>13:00–14:30</strong> Lunch at local restaurant (try Kerala thali)</li>
+                        <li><strong>14:30–15:30</strong> <strong>Mathur Hanging Bridge</strong> (25 km, 40 min drive)</li>
+                        <li><strong>15:30–16:30</strong> Drive back to Kanyakumari</li>
+                    </ul>
+                    <div class="photo-tip">📸 Gopuram, temple tank, sculptures, panoramic bridge view</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌆 EVENING</h4>
+                    <ul>
+                        <li><strong>16:30–17:00</strong> Rest at hotel</li>
+                        <li><strong>17:00–18:00</strong> Leisure walk, local market exploration 🛍️</li>
+                        <li><strong>18:00–19:30</strong> Dinner at hotel/local eatery</li>
+                        <li><strong>19:30</strong> Pack for tomorrow's departure, early night</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📍 Day 2 Pin List:</h4>
+                <div class="pin-list">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Padmanabhapuram+Palace" target="_blank">Padmanabhapuram Palace</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Suchindram+Thanumalayan+Temple" target="_blank">Suchindram Temple</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Mathur+Hanging+Bridge+Kanyakumari" target="_blank">Mathur Hanging Bridge</a>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🍽️ Local Food</h4>
+                    <p>Kerala thali, appam with stew, payasam</p>
+                </div>
+                <div class="info-card">
+                    <h4>🛍️ Shopping</h4>
+                    <p>Handicrafts at Suchindram market</p>
+                </div>
+                <div class="info-card">
+                    <h4>💰 Budget Tip</h4>
+                    <p>Hire car for full day (₹2000–2500 including driver)</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>✅ Do:</strong> Dress modestly for temple visits
+            </div>
+            <div class="warning-box">
+                <strong>❌ Don't:</strong> Skip Padmanabhapuram Palace (architectural gem)
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- DAY 3 -->
+        <div class="day-card">
+            <div class="day-header">
+                <h3>DAY 3 - JANUARY 16 (THURSDAY) 🌊</h3>
+                <p class="day-theme">Coastal Transition to Capital</p>
+            </div>
+
+            <div class="image-gallery">
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600" alt="Poovar Island">
+                    <div class="image-caption">🛶 Poovar Island Backwaters</div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Beach">
+                    <div class="image-caption">🏖️ Poovar Beach</div>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="time-block">
+                    <h4>⏰ MORNING</h4>
+                    <ul>
+                        <li><strong>07:00–08:00</strong> Breakfast, check-out</li>
+                        <li><strong>08:00–08:30</strong> Depart for Trivandrum (90 km total journey)</li>
+                        <li><strong>08:30–10:00</strong> Drive to <strong>Poovar Island</strong> (70 km, 1.5 hrs)</li>
+                    </ul>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌞 AFTERNOON</h4>
+                    <ul>
+                        <li><strong>10:00–12:30</strong> 🛶 <strong>Poovar Island backwater cruise</strong> + golden sand beach</li>
+                        <li><strong>12:30–13:30</strong> Lunch at Poovar Island Resort restaurant (seafood)</li>
+                        <li><strong>13:30–14:00</strong> Visit <strong>Poovar Beach</strong> (walk, relax)</li>
+                        <li><strong>14:00–15:00</strong> Drive to Trivandrum (20 km, 30 min)</li>
+                        <li><strong>15:00–16:00</strong> Check-in at Central Govt Holiday Home, rest</li>
+                    </ul>
+                    <div class="photo-tip">📸 Estuary meeting sea, mangroves, fishing boats, pristine beach - Boat ride: ₹500–800/person</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌆 EVENING</h4>
+                    <ul>
+                        <li><strong>16:00–18:00</strong> 🚶 <strong>Trivandrum walking tour</strong>: MG Road, Connemara Market</li>
+                        <li><strong>18:00–19:30</strong> Dinner at Ariya Nivaas (authentic Kerala cuisine)</li>
+                        <li><strong>19:30</strong> Return to hotel, rest</li>
+                    </ul>
+                    <div class="photo-tip">📸 Street scenes, colonial buildings, local life</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📍 Day 3 Pin List:</h4>
+                <div class="pin-list">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Poovar+Island+Kerala" target="_blank">Poovar Island</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Poovar+Beach+Kerala" target="_blank">Poovar Beach</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Central+Government+Holiday+Home+Thiruvananthapuram" target="_blank">Central Government Holiday Home Trivandrum</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Connemara+Market+Trivandrum" target="_blank">Connemara Market Trivandrum</a>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🍽️ Local Food</h4>
+                    <p>Karimeen fry, puttu-kadala, banana fritters</p>
+                </div>
+                <div class="info-card">
+                    <h4>🛍️ Shopping</h4>
+                    <p>Spices, cashews at Connemara Market</p>
+                </div>
+                <div class="info-card">
+                    <h4>💰 Budget Tip</h4>
+                    <p>Negotiate boat ride prices at Poovar</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>✅ Do:</strong> Carry sunscreen and hat for beach/boat
+            </div>
+            <div class="warning-box">
+                <strong>❌ Don't:</strong> Rush Poovar—it's serene and worth savoring
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- DAY 4 -->
+        <div class="day-card">
+            <div class="day-header">
+                <h3>DAY 4 - JANUARY 17 (FRIDAY) 🛕</h3>
+                <p class="day-theme">Capital City Heritage</p>
+            </div>
+
+            <div class="image-gallery">
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=600" alt="Temple">
+                    <div class="image-caption">🛕 Padmanabhaswamy Temple</div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600" alt="Palace">
+                    <div class="image-caption">🏰 Kuthiramalika Palace</div>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="time-block">
+                    <h4>⏰ MORNING</h4>
+                    <ul>
+                        <li><strong>07:00–08:00</strong> Breakfast at hotel</li>
+                        <li><strong>08:00–09:00</strong> Depart for city tour</li>
+                        <li><strong>09:00–11:00</strong> 🛕 <strong>Padmanabhaswamy Temple</strong> (dress code: men dhoti, women saree/churidar)</li>
+                        <li><strong>11:00–12:30</strong> <strong>Kuthiramalika Palace Museum</strong> (adjacent)</li>
+                    </ul>
+                    <div class="photo-tip">📸 Gopuram exterior (photography inside restricted), wooden horse carvings, royal artifacts</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌞 AFTERNOON</h4>
+                    <ul>
+                        <li><strong>12:30–13:30</strong> Lunch at Mothers Veg Plaza</li>
+                        <li><strong>13:30–14:30</strong> Rest at hotel</li>
+                        <li><strong>14:30–16:00</strong> <strong>Napier Museum + Zoo</strong> (Indo-Saracenic architecture)</li>
+                        <li><strong>16:00–17:30</strong> <strong>Shanghumukham Beach</strong> (8 km, 20 min drive)</li>
+                    </ul>
+                    <div class="photo-tip">📸 Museum building exterior, bronze idols, sunset, Matsya Kanyaka statue</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌆 EVENING</h4>
+                    <ul>
+                        <li><strong>17:30–19:00</strong> Beach walk, snacks at local stalls</li>
+                        <li><strong>19:00–20:30</strong> Dinner at Zam Zam Restaurant (biryani specialist)</li>
+                        <li><strong>20:30</strong> Return to hotel, rest</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📍 Day 4 Pin List:</h4>
+                <div class="pin-list">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Padmanabhaswamy+Temple+Trivandrum" target="_blank">Padmanabhaswamy Temple</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Kuthiramalika+Palace+Museum" target="_blank">Kuthiramalika Palace</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Napier+Museum+Trivandrum" target="_blank">Napier Museum</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Shanghumukham+Beach+Trivandrum" target="_blank">Shanghumukham Beach</a>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🍽️ Local Food</h4>
+                    <p>Sadya (if available), dosa varieties, Kerala biryani</p>
+                </div>
+                <div class="info-card">
+                    <h4>🛍️ Shopping</h4>
+                    <p>SMSM Institute handicrafts emporium</p>
+                </div>
+                <div class="info-card">
+                    <h4>💰 Budget Tip</h4>
+                    <p>Temple entry free; museum ₹20</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>✅ Do:</strong> Respect temple dress code strictly
+            </div>
+            <div class="warning-box">
+                <strong>❌ Don't:</strong> Carry phones/cameras inside temple
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- DAY 5 -->
+        <div class="day-card">
+            <div class="day-header">
+                <h3>DAY 5 - JANUARY 18 (SATURDAY) 🏖️</h3>
+                <p class="day-theme">Cliff Beach & Backwater Gateway</p>
+            </div>
+
+            <div class="image-gallery">
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600" alt="Varkala Beach">
+                    <div class="image-caption">🏖️ Varkala Cliff Beach</div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Alleppey">
+                    <div class="image-caption">🌅 Alleppey Beach</div>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="time-block">
+                    <h4>⏰ MORNING</h4>
+                    <ul>
+                        <li><strong>07:00–08:00</strong> Breakfast, check-out</li>
+                        <li><strong>08:00–10:00</strong> Drive to <strong>Varkala</strong> (50 km, 1.5 hrs)</li>
+                        <li><strong>10:00–12:30</strong> 🏖️ <strong>Varkala Beach</strong> (cliff beach exploration)</li>
+                    </ul>
+                    <div class="photo-tip">📸 Red cliffs, beach from cliff top, paragliding (optional), beach shacks</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌞 AFTERNOON</h4>
+                    <ul>
+                        <li><strong>12:30–13:30</strong> Lunch at Cliff Top restaurant (sea view)</li>
+                        <li><strong>13:30–14:00</strong> <strong>Janardhana Swamy Temple</strong> (2000-year-old temple)</li>
+                        <li><strong>14:00–16:30</strong> Drive to <strong>Alleppey</strong> (85 km, 2.5 hrs)</li>
+                        <li><strong>16:30–17:30</strong> Check-in at homestay, rest</li>
+                    </ul>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌆 EVENING</h4>
+                    <ul>
+                        <li><strong>17:30–19:00</strong> Evening walk at <strong>Alleppey Beach</strong>, lighthouse visit</li>
+                        <li><strong>19:00–20:30</strong> Dinner at homestay (traditional Kerala home-cooked meal)</li>
+                        <li><strong>20:30</strong> Rest, prepare for houseboat tomorrow</li>
+                    </ul>
+                    <div class="photo-tip">📸 Beach sunset, lighthouse, pier</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📍 Day 5 Pin List:</h4>
+                <div class="pin-list">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Varkala+Beach+Kerala" target="_blank">Varkala Beach</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Janardhana+Swamy+Temple+Varkala" target="_blank">Janardhana Swamy Temple Varkala</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Alleppey+Beach" target="_blank">Alleppey Beach</a>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🍽️ Local Food</h4>
+                    <p>Fresh seafood at Varkala, Kerala fish curry</p>
+                </div>
+                <div class="info-card">
+                    <h4>🛍️ Shopping</h4>
+                    <p>Beachwear, handicrafts at Varkala cliff shops</p>
+                </div>
+                <div class="info-card">
+                    <h4>💰 Budget Tip</h4>
+                    <p>Eat at local eateries vs tourist restaurants</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>✅ Do:</strong> Try mineral water springs at Varkala beach
+            </div>
+            <div class="warning-box">
+                <strong>❌ Don't:</strong> Swim in rough sea areas (check flags)
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- DAY 6 -->
+        <div class="day-card">
+            <div class="day-header">
+                <h3>DAY 6 - JANUARY 19 (SUNDAY) 🛶</h3>
+                <p class="day-theme">Backwater Bliss</p>
+            </div>
+
+            <div class="image-gallery">
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600" alt="Houseboat">
+                    <div class="image-caption">🛶 Kerala Houseboat</div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600" alt="Backwaters">
+                    <div class="image-caption">🌅 Backwater Sunset</div>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="time-block">
+                    <h4>⏰ MORNING</h4>
+                    <ul>
+                        <li><strong>07:00–08:00</strong> Early breakfast at homestay</li>
+                        <li><strong>08:00–12:00</strong> Free morning—explore Alleppey canals by shikara (₹500/hr)</li>
+                    </ul>
+                    <div class="photo-tip">📸 Village life, narrow canals, coir making, paddy fields - OR visit Marari Beach (15 km, 30 min drive)</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌞 AFTERNOON</h4>
+                    <ul>
+                        <li><strong>12:00–13:00</strong> Return to homestay, check-out</li>
+                        <li><strong>13:00–14:00</strong> Board <strong>houseboat</strong> at Alleppey jetty</li>
+                        <li><strong>14:00–20:00</strong> 🛶 <strong>Houseboat cruise</strong> through backwaters</li>
+                    </ul>
+                    <div class="photo-tip">📸 Sunset on backwaters, traditional Kerala boats, palm-fringed canals, village glimpses - Lunch, evening snacks, dinner on board (included)</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌆 EVENING</h4>
+                    <ul>
+                        <li><strong>20:00</strong> Overnight stay on houseboat (anchored)</li>
+                        <li>Stargazing from deck, peaceful night</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📍 Day 6 Pin List:</h4>
+                <div class="pin-list">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Alleppey+Backwaters" target="_blank">Alleppey Backwaters</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Marari+Beach+Kerala" target="_blank">Marari Beach</a>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🍽️ Local Food</h4>
+                    <p>Karimeen pollichathu, prawn curry (on houseboat)</p>
+                </div>
+                <div class="info-card">
+                    <h4>🛍️ Shopping</h4>
+                    <p>N/A (on water!)</p>
+                </div>
+                <div class="info-card">
+                    <h4>💰 Budget Tip</h4>
+                    <p>Book houseboat in advance (₹8000–12000 for couple)</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>✅ Do:</strong> Carry mosquito repellent, light clothing
+            </div>
+            <div class="warning-box">
+                <strong>❌ Don't:</strong> Expect WiFi/strong mobile signal
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- DAY 7 -->
+        <div class="day-card">
+            <div class="day-header">
+                <h3>DAY 7 - JANUARY 20 (MONDAY) 🚗</h3>
+                <p class="day-theme">Journey to Queen of Arabian Sea</p>
+            </div>
+
+            <div class="image-gallery">
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=600" alt="Kochi">
+                    <div class="image-caption">🌊 Marine Drive Kochi</div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600" alt="Sunrise">
+                    <div class="image-caption">🌅 Backwater Sunrise</div>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="time-block">
+                    <h4>⏰ MORNING</h4>
+                    <ul>
+                        <li><strong>07:00–08:00</strong> Breakfast on houseboat, sunrise views</li>
+                        <li><strong>08:00–09:00</strong> Disembark at Alleppey jetty</li>
+                        <li><strong>09:00–12:00</strong> Drive to <strong>Kochi</strong> (55 km, 1.5 hrs)</li>
+                        <li><strong>12:00–13:00</strong> Check-in at Central Govt Holiday Home Kochi, rest</li>
+                    </ul>
+                    <div class="photo-tip">📸 Morning mist on backwaters, sunrise reflections</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌞 AFTERNOON</h4>
+                    <ul>
+                        <li><strong>13:00–14:00</strong> Lunch at hotel/nearby</li>
+                        <li><strong>14:00–16:00</strong> Rest, relax</li>
+                        <li><strong>16:00–18:00</strong> 🚶 <strong>Marine Drive</strong> evening walk</li>
+                    </ul>
+                    <div class="photo-tip">📸 Sunset over harbor, Rainbow Bridge, Chinese fishing nets silhouette</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌆 EVENING</h4>
+                    <ul>
+                        <li><strong>18:00–19:00</strong> Boat ride at Marine Drive (optional, ₹50)</li>
+                        <li><strong>19:00–20:30</strong> Dinner at Dhe Puttu (modern Kerala cuisine)</li>
+                        <li><strong>20:30</strong> Return to hotel, rest</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📍 Day 7 Pin List:</h4>
+                <div class="pin-list">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Central+Government+Holiday+Home+Kochi" target="_blank">Central Government Holiday Home Kochi</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Marine+Drive+Kochi" target="_blank">Marine Drive Kochi</a>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🍽️ Local Food</h4>
+                    <p>Puttu variations, appam, Kerala porotta</p>
+                </div>
+                <div class="info-card">
+                    <h4>🛍️ Shopping</h4>
+                    <p>Broadway market (nearby)</p>
+                </div>
+                <div class="info-card">
+                    <h4>💰 Budget Tip</h4>
+                    <p>Marine Drive walk is free entertainment</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>✅ Do:</strong> Watch sunset from Marine Drive walkway
+            </div>
+            <div class="warning-box">
+                <strong>❌ Don't:</strong> Overpack your Kochi days—you have 5 days!
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- DAY 8 -->
+        <div class="day-card">
+            <div class="day-header">
+                <h3>DAY 8 - JANUARY 21 (TUESDAY) 💦</h3>
+                <p class="day-theme">Waterfall Wonderland</p>
+            </div>
+
+            <div class="image-gallery">
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1520208422220-d12a3c588e6c?w=600" alt="Athirappilly Waterfalls">
+                    <div class="image-caption">💦 Athirappilly Waterfalls</div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Waterfall">
+                    <div class="image-caption">🌊 Vazhachal Falls</div>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="time-block">
+                    <h4>⏰ MORNING</h4>
+                    <ul>
+                        <li><strong>06:30–07:30</strong> Early breakfast</li>
+                        <li><strong>07:30–10:30</strong> Drive to <strong>Athirappilly Waterfalls</strong> (60 km, 3 hrs via traffic)</li>
+                        <li><strong>10:30–13:00</strong> 🌊 <strong>Athirappilly Falls</strong> exploration</li>
+                    </ul>
+                    <div class="photo-tip">📸 Waterfall from viewpoints, rainbow in mist, lush greenery, cascades - Walk to multiple viewpoints (wear grip shoes) - Visit nearby Vazhachal Falls (5 km, 10 min)</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌞 AFTERNOON</h4>
+                    <ul>
+                        <li><strong>13:00–14:00</strong> Lunch at Rainforest Resort restaurant</li>
+                        <li><strong>14:00–14:30</strong> Rest, nature walk</li>
+                        <li><strong>14:30–17:30</strong> Drive back to Kochi</li>
+                        <li><strong>17:30–18:00</strong> Rest at hotel</li>
+                    </ul>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌆 EVENING</h4>
+                    <ul>
+                        <li><strong>18:00–19:30</strong> Explore <strong>Lulu Mall</strong> (shopping, entertainment)</li>
+                        <li><strong>19:30–21:00</strong> Dinner at Food Court/SkyGrill</li>
+                        <li><strong>21:00</strong> Return to hotel, rest</li>
+                    </ul>
+                    <div class="photo-tip">📸 Modern Kerala, mall architecture</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📍 Day 8 Pin List:</h4>
+                <div class="pin-list">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Athirappilly+Waterfalls" target="_blank">Athirappilly Waterfalls</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Vazhachal+Waterfalls" target="_blank">Vazhachal Falls</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Lulu+Mall+Kochi" target="_blank">Lulu Mall Kochi</a>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🍽️ Local Food</h4>
+                    <p>Tribal honey, fresh fruit juices near falls</p>
+                </div>
+                <div class="info-card">
+                    <h4>🛍️ Shopping</h4>
+                    <p>Lulu Mall—spices, tea, Kerala souvenirs</p>
+                </div>
+                <div class="info-card">
+                    <h4>💰 Budget Tip</h4>
+                    <p>Entry to falls ₹30; avoid weekend crowds</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>✅ Do:</strong> Start early to avoid midday heat
+            </div>
+            <div class="warning-box">
+                <strong>❌ Don't:</strong> Swim in restricted areas (dangerous currents)
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- DAY 9 -->
+        <div class="day-card">
+            <div class="day-header">
+                <h3>DAY 9 - JANUARY 22 (WEDNESDAY) 🏛️</h3>
+                <p class="day-theme">Fort Kochi Heritage Walk</p>
+            </div>
+
+            <div class="image-gallery">
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=600" alt="Chinese Fishing Nets">
+                    <div class="image-caption">🎣 Chinese Fishing Nets</div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600" alt="Fort Kochi">
+                    <div class="image-caption">🏛️ Mattancherry Palace</div>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="time-block">
+                    <h4>⏰ MORNING</h4>
+                    <ul>
+                        <li><strong>07:00–08:00</strong> Breakfast at hotel</li>
+                        <li><strong>08:00–09:00</strong> Drive to <strong>Fort Kochi</strong> (15 km, 30 min)</li>
+                        <li><strong>09:00–11:00</strong> 🎣 <strong>Chinese Fishing Nets</strong> + beach walk</li>
+                        <li><strong>11:00–12:30</strong> 🏛️ <strong>Mattancherry Palace</strong> (Dutch Palace)</li>
+                    </ul>
+                    <div class="photo-tip">📸 Fishing nets in action, fishermen, morning light, murals, Kerala architecture - Entry: ₹5</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌞 AFTERNOON</h4>
+                    <ul>
+                        <li><strong>12:30–13:30</strong> Lunch at Kashi Art Café (art gallery + café)</li>
+                        <li><strong>13:30–15:00</strong> 🕍 <strong>Jewish Synagogue</strong> + Jew Town exploration</li>
+                        <li><strong>15:00–16:00</strong> <strong>Santa Cruz Basilica</strong> (pastel-colored church)</li>
+                    </ul>
+                    <div class="photo-tip">📸 Blue Chinese tiles, antique shops, spice markets, Gothic architecture, stained glass</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌆 EVENING</h4>
+                    <ul>
+                        <li><strong>16:00–17:00</strong> Rest at hotel</li>
+                        <li><strong>17:00–18:30</strong> Return to Fort Kochi for <strong>Kathakali performance</strong> (₹500)</li>
+                        <li><strong>18:30–20:00</strong> Dinner at Oceanos Restaurant (seafood, sea view)</li>
+                        <li><strong>20:00</strong> Return to hotel</li>
+                    </ul>
+                    <div class="photo-tip">📸 Makeup process, costumes, dance performance</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📍 Day 9 Pin List:</h4>
+                <div class="pin-list">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Fort+Kochi" target="_blank">Fort Kochi</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Chinese+Fishing+Nets+Fort+Kochi" target="_blank">Chinese Fishing Nets</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Mattancherry+Palace+Kochi" target="_blank">Mattancherry Palace</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Paradesi+Synagogue+Kochi" target="_blank">Jewish Synagogue Kochi</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Santa+Cruz+Basilica+Fort+Kochi" target="_blank">Santa Cruz Basilica</a>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🍽️ Local Food</h4>
+                    <p>Malabar biryani, seafood moilee, banana chips</p>
+                </div>
+                <div class="info-card">
+                    <h4>🛍️ Shopping</h4>
+                    <p>Antiques at Jew Town, spices, Kerala sarees</p>
+                </div>
+                <div class="info-card">
+                    <h4>💰 Budget Tip</h4>
+                    <p>Synagogue entry ₹5; closes 12–3 PM</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>✅ Do:</strong> Book Kathakali show in advance
+            </div>
+            <div class="warning-box">
+                <strong>❌ Don't:</strong> Miss Jew Town's hidden antique treasures
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- DAY 10 -->
+        <div class="day-card">
+            <div class="day-header">
+                <h3>DAY 10 - JANUARY 23 (THURSDAY) 🎨</h3>
+                <p class="day-theme">Art, Culture & Leisure</p>
+            </div>
+
+            <div class="image-gallery">
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600" alt="Art Gallery">
+                    <div class="image-caption">🎨 Kochi Biennale</div>
+                </div>
+                <div class="image-card">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Sunset Cruise">
+                    <div class="image-caption">🌅 Kochi Harbor Sunset</div>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="time-block">
+                    <h4>⏰ MORNING</h4>
+                    <ul>
+                        <li><strong>07:00–08:00</strong> Breakfast at hotel</li>
+                        <li><strong>08:00–09:00</strong> Leisure morning, sleep in</li>
+                        <li><strong>09:00–11:30</strong> 🎨 <strong>Kochi Biennale Art Galleries</strong> (if running) OR <strong>Hill Palace Museum</strong> (Tripunithura, 12 km)</li>
+                    </ul>
+                    <div class="photo-tip">📸 Contemporary art installations, heritage palace, archaeological museum</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌞 AFTERNOON</h4>
+                    <ul>
+                        <li><strong>11:30–13:00</strong> Lunch at Pai Dosa (local favorite)</li>
+                        <li><strong>13:00–15:00</strong> Rest at hotel</li>
+                        <li><strong>15:00–17:00</strong> <strong>Bolgatty Palace</strong> island visit (ferry ride) OR relax at hotel pool/spa</li>
+                    </ul>
+                    <div class="photo-tip">📸 Dutch palace, island views, gardens</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌆 EVENING</h4>
+                    <ul>
+                        <li><strong>17:00–18:30</strong> Sunset cruise on Kochi harbor (₹400–600)</li>
+                        <li><strong>18:30–20:00</strong> Dinner at Grand Pavilion (multi-cuisine)</li>
+                        <li><strong>20:00</strong> Return to hotel, pack for departure</li>
+                    </ul>
+                    <div class="photo-tip">📸 Sunset over Arabian Sea, city skyline, Chinese fishing nets from water</div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📍 Day 10 Pin List:</h4>
+                <div class="pin-list">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Kochi+Biennale+Foundation" target="_blank">Kochi Biennale Art Gallery</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Hill+Palace+Museum+Tripunithura" target="_blank">Hill Palace Museum</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Bolgatty+Palace+Kochi" target="_blank">Bolgatty Palace</a>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🍽️ Local Food</h4>
+                    <p>Dosa varieties, Kerala meals, seafood</p>
+                </div>
+                <div class="info-card">
+                    <h4>🛍️ Shopping</h4>
+                    <p>Last-minute spice shopping at Broadway</p>
+                </div>
+                <div class="info-card">
+                    <h4>💰 Budget Tip</h4>
+                    <p>Hill Palace entry ₹20; combo ticket available</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>✅ Do:</strong> Confirm departure plans for tomorrow
+            </div>
+            <div class="warning-box">
+                <strong>❌ Don't:</strong> Overexert—save energy for travel day
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- DAY 11 -->
+        <div class="day-card">
+            <div class="day-header">
+                <h3>DAY 11 - JANUARY 24 (FRIDAY) 🛫</h3>
+                <p class="day-theme">Farewell Kerala</p>
+            </div>
+
+            <div class="timeline">
+                <div class="time-block">
+                    <h4>⏰ MORNING</h4>
+                    <ul>
+                        <li><strong>07:00–08:00</strong> Breakfast at hotel</li>
+                        <li><strong>08:00–10:00</strong> Leisure morning, final shopping at Broadway Market</li>
+                        <li><strong>10:00–12:00</strong> Check-out, rest at hotel lobby if needed</li>
+                    </ul>
+                    <div class="photo-tip">🛍️ Spices, tea, cashews, Kerala handicrafts</div>
+                </div>
+
+                <div class="time-block">
+                    <h4>🌞 AFTERNOON</h4>
+                    <ul>
+                        <li><strong>12:00–13:00</strong> Lunch at hotel/nearby</li>
+                        <li><strong>13:00–15:00</strong> Last-minute sightseeing OR rest</li>
+                        <li><strong>15:00 onwards</strong> Depart for airport/railway station based on your schedule</li>
+                    </ul>
+                    <p><strong>Travel Times:</strong></p>
+                    <ul>
+                        <li>Kochi Airport: 40 km, 1.5 hrs</li>
+                        <li>Ernakulam Railway: 10 km, 30 min</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h4>📍 Day 11 Pin List:</h4>
+                <div class="pin-list">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Broadway+Market+Kochi" target="_blank">Broadway Market Kochi</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Cochin+International+Airport" target="_blank">Cochin International Airport</a>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Ernakulam+Junction+Railway+Station" target="_blank">Ernakulam Junction Railway Station</a>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🍽️ Local Food</h4>
+                    <p>Quick Kerala snacks for journey</p>
+                </div>
+                <div class="info-card">
+                    <h4>🛍️ Shopping</h4>
+                    <p>Final spice packets, banana chips</p>
+                </div>
+                <div class="info-card">
+                    <h4>💰 Budget Tip</h4>
+                    <p>Keep ₹500 cash for last-minute purchases</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>✅ Do:</strong> Keep 3 hours buffer for airport
+            </div>
+            <div class="warning-box">
+                <strong>❌ Don't:</strong> Forget to collect all belongings from hotel
+            </div>
+        </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- PACKING CHECKLIST -->
+    <div class="container">
+        <div class="section">
+            <h2>🎒 PACKING CHECKLIST</h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>👕 Clothing</h4>
+                    <ul class="checklist">
+                        <li>6–7 light cotton t-shirts/tops</li>
+                        <li>3–4 comfortable pants/shorts</li>
+                        <li>2 traditional outfits (temple visits)</li>
+                        <li>Light jacket/shawl</li>
+                        <li>Swimwear</li>
+                        <li>7–8 pairs underwear, socks</li>
+                        <li>Comfortable walking shoes</li>
+                        <li>Sandals/flip-flops</li>
+                        <li>Hat/cap</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h4>🧴 Toiletries & Health</h4>
+                    <ul class="checklist">
+                        <li>Sunscreen SPF 50+</li>
+                        <li>Mosquito repellent (essential!)</li>
+                        <li>Basic first-aid kit</li>
+                        <li>Prescribed medications</li>
+                        <li>Hand sanitizer</li>
+                        <li>Wet wipes</li>
+                        <li>Personal hygiene items</li>
+                        <li>Motion sickness tablets</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h4>📱 Electronics & Documents</h4>
+                    <ul class="checklist">
+                        <li>Phone + charger + power bank</li>
+                        <li>Camera + extra batteries/SD cards</li>
+                        <li>Universal adapter</li>
+                        <li>Government ID (Aadhar/Passport)</li>
+                        <li>Hotel booking confirmations</li>
+                        <li>Travel insurance documents</li>
+                        <li>Emergency contact list</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h4>🎒 Miscellaneous</h4>
+                    <ul class="checklist">
+                        <li>Reusable water bottle</li>
+                        <li>Small backpack (day trips)</li>
+                        <li>Sunglasses</li>
+                        <li>Umbrella</li>
+                        <li>Plastic bags</li>
+                        <li>Notebook & pen</li>
+                        <li>Snacks for travel</li>
+                        <li>Cash (₹10,000–15,000) + cards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- BOOK IN ADVANCE -->
+        <div class="section">
+            <h2>📋 BOOK IN ADVANCE CHECKLIST</h2>
+            
+            <div class="highlight-box">
+                <h3>✅ Must Book NOW</h3>
+                <ul class="checklist">
+                    <li><strong>Houseboat (Jan 19)</strong> - Book 2–3 weeks ahead (₹8000–12000)</li>
+                    <li><strong>Car rental</strong> - Full trip or day-wise (₹2000–2500/day with driver)</li>
+                    <li><strong>Kathakali show Fort Kochi</strong> - Book online/call venue</li>
+                    <li><strong>Poovar Island boat ride</strong> - Can book on arrival but call ahead</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                <h3>✅ Book 3–5 Days Before</h3>
+                <ul class="checklist">
+                    <li><strong>Vivekananda Rock ferry tickets</strong> - Online booking available</li>
+                    <li><strong>Athirappilly waterfall guide</strong> (optional but helpful)</li>
+                    <li><strong>Sunset cruise Kochi</strong> - Book day before</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);">
+                <h3>✅ Confirm Before Departure</h3>
+                <ul class="checklist">
+                    <li>All hotel check-in/check-out times</li>
+                    <li>Car driver contact numbers</li>
+                    <li>Restaurant reservations (if any)</li>
+                    <li>Temple visiting hours (Padmanabhaswamy closes 12:30–3:30 PM)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- BUDGET BREAKDOWN -->
+        <div class="section">
+            <h2>💰 ESTIMATED BUDGET BREAKDOWN</h2>
+            <p style="font-size: 1.2em; margin-bottom: 20px;"><strong>Per Person (2 people traveling):</strong></p>
+            
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Cost (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Accommodation (10 nights)</td>
+                        <td>15,000–20,000</td>
+                    </tr>
+                    <tr>
+                        <td>Houseboat (1 night)</td>
+                        <td>4,000–6,000</td>
+                    </tr>
+                    <tr>
+                        <td>Car rental (8 days)</td>
+                        <td>16,000–20,000</td>
+                    </tr>
+                    <tr>
+                        <td>Food (11 days)</td>
+                        <td>8,000–12,000</td>
+                    </tr>
+                    <tr>
+                        <td>Entry tickets & activities</td>
+                        <td>3,000–5,000</td>
+                    </tr>
+                    <tr>
+                        <td>Shopping & miscellaneous</td>
+                        <td>5,000–10,000</td>
+                    </tr>
+                    <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-weight: bold;">
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong>₹51,000–73,000</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-grid" style="margin-top: 30px;">
+                <div class="info-card">
+                    <h4>💡 Budget Tips</h4>
+                    <ul>
+                        <li>Eat at local restaurants vs hotels (save 40%)</li>
+                        <li>Book houseboat on weekdays (cheaper)</li>
+                        <li>Carry water bottle (save ₹50/day)</li>
+                        <li>Negotiate car rates for multi-day booking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- TOP 5 EXPERIENCES -->
+        <div class="section">
+            <h2>🏆 TOP 5 UNMISSABLE EXPERIENCES</h2>
+            
+            <div class="top-experiences">
+                <div class="experience-card">
+                    <div class="icon">🌅</div>
+                    <h4>Kanyakumari Sunset</h4>
+                    <p>Where three seas meet</p>
+                    <p style="color: #667eea; font-weight: 600;">Day 1</p>
+                </div>
+
+                <div class="experience-card">
+                    <div class="icon">🛶</div>
+                    <h4>Alleppey Houseboat</h4>
+                    <p>Backwater overnight magic</p>
+                    <p style="color: #667eea; font-weight: 600;">Day 6</p>
+                </div>
+
+                <div class="experience-card">
+                    <div class="icon">💦</div>
+                    <h4>Athirappilly Waterfalls</h4>
+                    <p>Kerala's Niagara</p>
+                    <p style="color: #667eea; font-weight: 600;">Day 8</p>
+                </div>
+
+                <div class="experience-card">
+                    <div class="icon">🎣</div>
+                    <h4>Chinese Fishing Nets</h4>
+                    <p>Fort Kochi icon</p>
+                    <p style="color: #667eea; font-weight: 600;">Day 9</p>
+                </div>
+
+                <div class="experience-card">
+                    <div class="icon">🎭</div>
+                    <h4>Kathakali Performance</h4>
+                    <p>Traditional dance-drama</p>
+                    <p style="color: #667eea; font-weight: 600;">Day 9</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- MUST-TRY FOODS -->
+        <div class="section">
+            <h2>🍛 MUST-TRY KERALA FOODS</h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🥘 Main Dishes</h4>
+                    <ul>
+                        <li><strong>Karimeen Pollichathu</strong> - Pearl spot fish in banana leaf</li>
+                        <li><strong>Malabar Biryani</strong> - Fragrant rice with meat</li>
+                        <li><strong>Appam with Stew</strong> - Rice pancake with coconut curry</li>
+                        <li><strong>Kerala Sadya</strong> - Vegetarian feast on banana leaf</li>
+                        <li><strong>Fish Moilee</strong> - Fish in coconut milk</li>
+                        <li><strong>Puttu & Kadala</strong> - Steamed rice cake with chickpea curry</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h4>🍲 Snacks & Sides</h4>
+                    <ul>
+                        <li><strong>Banana chips</strong> - Crispy, salted</li>
+                        <li><strong>Kerala Porotta</strong> - Layered flatbread</li>
+                        <li><strong>Unniyappam</strong> - Sweet rice fritters</li>
+                        <li><strong>Pazham Pori</strong> - Banana fritters</li>
+                        <li><strong>Tapioca chips</strong></li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h4>🥤 Beverages</h4>
+                    <ul>
+                        <li><strong>Filter coffee</strong> - Strong, sweet</li>
+                        <li><strong>Tender coconut water</strong> - Fresh from beach vendors</li>
+                        <li><strong>Sulaimani tea</strong> - Lemon tea</li>
+                        <li><strong>Fresh fruit juices</strong></li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h4>🍮 Desserts</h4>
+                    <ul>
+                        <li><strong>Payasam</strong> - Sweet pudding (multiple varieties)</li>
+                        <li><strong>Ada Pradhaman</strong> - Rice flakes in jaggery</li>
+                        <li><strong>Banana halwa</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- CULTURAL ETIQUETTE -->
+        <div class="section">
+            <h2>🎭 CULTURAL ETIQUETTE</h2>
+            
+            <div class="info-grid">
+                <div class="info-card" style="background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);">
+                    <h4>✅ DO:</h4>
+                    <ul>
+                        <li>Remove shoes before entering temples/homes</li>
+                        <li>Dress modestly at religious sites (cover shoulders, knees)</li>
+                        <li>Ask permission before photographing people</li>
+                        <li>Use right hand for eating/giving/receiving</li>
+                        <li>Respect local customs and traditions</li>
+                        <li>Bargain politely at markets (expected!)</li>
+                        <li>Try local food (safe and delicious)</li>
+                    </ul>
+                </div>
+
+                <div class="info-card" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                    <h4>❌ DON'T:</h4>
+                    <ul>
+                        <li>Wear revealing clothing at temples</li>
+                        <li>Touch people's heads (considered disrespectful)</li>
+                        <li>Point feet at people/deities</li>
+                        <li>Refuse food offered by hosts (politely accept small portion)</li>
+                        <li>Litter (Kerala is very clean—keep it that way!)</li>
+                        <li>Drink tap water (stick to bottled/filtered)</li>
+                        <li>Rush temple visits (take time to absorb spirituality)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- EMERGENCY CONTACTS -->
+        <div class="section emergency-contacts">
+            <h2 style="color: white;">🚨 EMERGENCY CONTACTS</h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>📞 Emergency Numbers</h4>
+                    <ul>
+                        <li><strong>Police:</strong> 100</li>
+                        <li><strong>Ambulance:</strong> 108</li>
+                        <li><strong>Fire:</strong> 101</li>
+                        <li><strong>Tourist Police Kerala:</strong> 0471-2321132</li>
+                        <li><strong>Kerala Tourism Helpline:</strong> 1-800-425-4747</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h4>🏥 Hospital Recommendations</h4>
+                    <ul>
+                        <li><strong>Kanyakumari:</strong> Christudas Hospital</li>
+                        <li><strong>Trivandrum:</strong> KIMS Hospital</li>
+                        <li><strong>Kochi:</strong> Lissie Hospital, Ernakulam Medical Centre</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- INSIDER TIPS -->
+        <div class="section">
+            <h2>🌟 INSIDER TIPS</h2>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>💡 Tip 1-3</h4>
+                    <ol>
+                        <li><strong>Best time to visit temples:</strong> Early morning (6–8 AM) for peaceful experience</li>
+                        <li><strong>Houseboat hack:</strong> Book Sunday–Thursday for better rates</li>
+                        <li><strong>Food safety:</strong> Stick to busy restaurants (high turnover = fresh food)</li>
+                    </ol>
+                </div>
+
+                <div class="info-card">
+                    <h4>💡 Tip 4-6</h4>
+                    <ol start="4">
+                        <li><strong>Bargaining:</strong> Start at 50% of quoted price in markets</li>
+                        <li><strong>Monsoon magic:</strong> If light rain, backwaters look even more beautiful</li>
+                        <li><strong>Local transport:</strong> Auto-rickshaws—always use meter or fix price before</li>
+                    </ol>
+                </div>
+
+                <div class="info-card">
+                    <h4>💡 Tip 7-10</h4>
+                    <ol start="7">
+                        <li><strong>Spice shopping:</strong> Buy from government emporiums for quality guarantee</li>
+                        <li><strong>Photography:</strong> Golden hour (6–7 AM, 5:30–6:30 PM) for best light</li>
+                        <li><strong>Ayurvedic massage:</strong> Try at least once in Kochi (book reputable spa)</li>
+                        <li><strong>Language:</strong> Learn basic Malayalam—"Nanni" (thank you), "Sukham ano?" (how are you?)</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- FINAL MESSAGE -->
+        <div class="section" style="text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 20px;">
+            <h2 style="color: white; border: none;">✨ FINAL WORDS</h2>
+            <p style="font-size: 1.2em; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+                This guidebook is designed for a <strong>comfortable, immersive Kerala experience</strong> balancing heritage & culture, beaches & backwaters, nature & waterfalls, authentic cuisine, local shopping, and rest & relaxation.
+            </p>
+            <p style="font-size: 1.3em; margin-top: 30px; font-weight: 600;">
+                Remember: Travel is about experiences, not checklists. If something captivates you, linger. If you're tired, rest. This itinerary is your framework, not your prison.
+            </p>
+            <div style="font-size: 2.5em; margin: 30px 0;">
+                🌴 🌊 🛶 🛕 🌅
+            </div>
+            <p style="font-size: 1.5em; font-weight: 700;">
+                Have an incredible journey through God's Own Country!
+            </p>
+            <p style="font-size: 1.1em; margin-top: 20px; opacity: 0.9;">
+                📱 Pro Tip: Download offline maps for all locations, save this guidebook as PDF, and share your itinerary with family. Take lots of photos, try every food, talk to locals, and create memories that last a lifetime!
+            </p>
+            <p style="font-size: 1.4em; margin-top: 40px; font-weight: 600;">
+                Bon Voyage! 🙏✨
+            </p>
+        </div>
+    </div>
+
+    <!-- PRINT BUTTON -->
+    <button class="print-button no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+    <script>
+        // Smooth scroll for links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
